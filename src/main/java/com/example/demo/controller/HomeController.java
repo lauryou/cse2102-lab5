@@ -60,7 +60,7 @@ public class HomeController {
         model.addAttribute("quiz", quiz);
         count.count = count.count + 1; // increment to get next question
         
-        if (count.count > 5) { // 5 questions total. because of extra increment at start, need to stop after 5
+        if (count.count > 5) { // 5 questions total (0-4 index). because of extra increment at start, need to stop after 5
             count.count --; // after last question, decrement to access the last index and check final answer
             if (quiz.getAnswer().equals(question.getAnswer())) {
                 quiz.setScore(quiz.getScore() + 20);
