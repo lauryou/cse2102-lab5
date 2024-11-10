@@ -30,7 +30,7 @@ class WebsiteApplicationTests {
 	}
 
 	@Test
-	public void questionTest() { // test count, question, and answer here bc count is static -- though that's how it keeps state between page loads
+	public void questionTest() {
 		ArrayList <String> arrayQTest = new ArrayList<String>();
 		arrayQTest.add("Sea level has remained fairly constant throughout Earth's history.");
         arrayQTest.add("Melting sea ice has the potential to raise sea level by several meters.");

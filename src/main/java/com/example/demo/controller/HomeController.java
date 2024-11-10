@@ -36,10 +36,10 @@ public class HomeController {
         return "welcome";
     }
 
-    @GetMapping("/quiz") // get will only happen first iteration, after is all post
+    @GetMapping("/quiz") // get happens the first time, after is all post
     public String quizGet(Model model) {
         Count count = new Count();
-        count.count = count.count + 1; // increment so that it starts at 1. in get methods, count is decremented to match index
+        count.count = count.count + 1; // increment so that it starts at 1. in getQuestion / Answer methods, count is decremented to match index
 
         Question question = new Question();
         String newQuestion = question.getQuestion();
@@ -75,7 +75,7 @@ public class HomeController {
         question.setAnswer(newAnswer);
 
         String answer = quiz.getAnswer();
-        if (answer.equals(newAnswer)) { // if answer matches
+        if (answer.equals(newAnswer)) { // if answer matches, increase score
             quiz.setScore(quiz.getScore() + 20);
         }
 
