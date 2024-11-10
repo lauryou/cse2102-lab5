@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Congrats!</title>
+    </head>
+
+    <body>
+        <h1 style="text-align:center;">Congrats on finishing the quiz!</h1>
+        <p style="text-align:center;" th:text="'Final Score: ' + ${quiz.score}" />
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Quiz Time</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 style="text-align:center;">Quiz Time</h1>
+    <p style="text-align:center;" th:text="'Current Score: ' + ${quiz.score}" />
+    <p style="font-weight:bold; text-align:center;" th:text="'Question ' + ${count.count}" />
+    <p style="text-align:center;" th:text="${question.question}" />
+    <form style="text-align:center;" action="#" th:action="@{/quiz}" th:object="${quiz}" method="post">
+        <button type="submit" value="True" name="answer" th:field="*{answer}">True</button>
+        <button type="submit" value="False" name="answer" th:field="*{answer}">False</button>
+    </form>
+</body>
+</html>

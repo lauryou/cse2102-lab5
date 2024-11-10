@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Quiz Time</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Quiz Time</h1>
+    <p th:text="'Email: ' + ${login.email}" />
+    <p th:text="'Password: ' + ${login.password}" />
+    <a href="/">Submit another message</a> 
+    <!-- /login -->
+</body>
+</html>

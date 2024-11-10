@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Quiz Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 style="text-align:center; margin:25px; font-weight:bold">Quiz Login</h1>
+    <form style="text-align:center; margin:25px; font-weight:bold" action="#" th:action="@{/welcome}" th:object="${login}" method="post">
+    	<p>Email: <input style="border:0.5px solid black" type="text" th:field="*{email}" /></p>
+        <p>Password: <input style="border:0.5px solid black" type="text" th:field="*{password}" /></p>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>
