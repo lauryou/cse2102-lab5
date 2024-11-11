@@ -1,7 +1,7 @@
 # cse2102-lab5
 In this lab, Spring Boot and Thymleaf are used to create an application that has three functions. It first asks for a login (email and password), and checks the validity of that email ("@" character) and password (length) upon submission. Once the user is "logged in", they are directed to a "Welcome" page, from which they can click to take the quiz.
 
-The quiz is composed of 5 questions on nature-related things (sea, global warming, Earth). Each question can be answered via the "True" and "False" buttons below -- only one can be clicked. The user's score is tracked, and for each correct answer, the score is increased by 20. If all questions are answered correctly, the score will be a 100. The user's score is presented after the last question after the "Congrats!". 
+The quiz is composed of 5 questions on nature-related things (sea, global warming, Earth). Each question can be answered via the "True" and "False" buttons below -- only one can be clicked. The user's score is tracked, and for each correct answer, the score is increased by 20. If all questions are answered correctly, the score will be a 100. The user's score is presented following the last question under the "Congrats!". 
 
 ## Description of Endpoints
 
@@ -12,7 +12,7 @@ At this endpoint (via GET), the login.html file is displayed as the view. A new 
 
 2. **"/welcome"**
 
-The login.html's form will POST to this endpoint, which will show a different view depending on the inputted information. If the email does not contain the "@" character, bad_email.html will be the view. If the password length is less than 10, bad_password.html will be the view. For both of these views, the user can click to go to the login form again ("/" endpoint) to try again. If the entered information meets both criteria, welcome.html file will be the view. This endpoint makes use of the Login class's getEmail() and getPassword() methods.
+The login.html's form will POST to this endpoint, which will show a different view depending on the inputted information. If the email does not contain the "@" character, bad_email.html will be the view. If the password length is less than 10, bad_password.html will be the view. For both of these views, the user can click to go to the login form ("/" endpoint) to try again. If the entered information meets both criteria, welcome.html file will be the view. This endpoint makes use of the Login class's getEmail() and getPassword() methods.
 
 3. **"/quiz"**
 
