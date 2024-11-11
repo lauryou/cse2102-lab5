@@ -5,7 +5,7 @@ The quiz is composed of 5 questions on nature-related things (sea, global warmin
 
 ## Description of Endpoints
 
-Here are the following REST endpoints, which can be found in HomeController.java.
+Here are the REST endpoints, which can be found in HomeController.java.
 1. **"/"**
 
 At this endpoint (via GET), the login.html file is displayed as the view. A new instance of the Login class is added to the model as an attribute. This instance's email and password variables will hold the information that is submitted in the displayed form. 
