@@ -18,7 +18,7 @@ The login.html's form will POST to this endpoint, which will show a different vi
 
 For the first access of this endpoint (GET), a new instance of the Count, Question, and Quiz classes are added to the model. The Count class's count variable is incremented (so that the first question shows as Question 1), and the Question class's question and answer variables are set.
 
-The user's choice of answer (True/False) will POST to this endpoint. The user's answer is pulled via the the Quiz class's getAnswer() method and checked against the correct answer from the Question class. If the answer matches, the user's score is increased by 20 via the Quiz class's setScore() method. After all 5 questions have been shown, done.html becomes the view.
+The user's choice of answer (True/False) will POST to this endpoint. The user's answer is pulled via the the Quiz class's getAnswer() method and checked against the correct answer from the Question class. If the answer matches, the user's score is increased by 20 via the Quiz class's setScore() method. A new question and answer are then set once the count increments. After all 5 questions have been shown, done.html becomes the view.
 
 ## Unit Tests
 There are 5 unit tests. Here are their purposes:
