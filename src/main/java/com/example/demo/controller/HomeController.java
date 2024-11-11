@@ -58,13 +58,14 @@ public class HomeController {
     @PostMapping("/quiz")
     public String quizPost(@ModelAttribute Quiz quiz, @ModelAttribute Count count, @ModelAttribute Question question, Model model) {
         model.addAttribute("quiz", quiz);
+
+        String answer = quiz.getAnswer();
+        if (answer.equals(question.getAnswer())) { // if answer matches, increase score
+            quiz.setScore(quiz.getScore() + 20);
+        }
+
         count.count = count.count + 1; // increment to get next question
-        
         if (count.count > 5) { // 5 questions total (0-4 index). because of extra increment at start, need to stop after 5
-            count.count --; // after last question, decrement to access the last index and check final answer
-            if (quiz.getAnswer().equals(question.getAnswer())) {
-                quiz.setScore(quiz.getScore() + 20);
-            }
             return "done";
         }
         
@@ -73,11 +74,6 @@ public class HomeController {
 
         String newAnswer = question.getAnswer();
         question.setAnswer(newAnswer);
-
-        String answer = quiz.getAnswer();
-        if (answer.equals(newAnswer)) { // if answer matches, increase score
-            quiz.setScore(quiz.getScore() + 20);
-        }
 
         return "quiz";
     }
